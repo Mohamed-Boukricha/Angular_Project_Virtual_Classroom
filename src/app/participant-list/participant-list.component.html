@@ -1,0 +1,29 @@
+<h2 id="title"> Liste des participants</h2>
+<a routerLink="/AddParticipant"  ><button class="addbtn">+</button></a>
+
+<table class="table table-striped" id="participants">
+<tr>
+<th *ngFor="let col of columns">
+  {{col}}
+  </th>
+</tr>
+
+ <tr *ngFor="let participant of participants">
+<td *ngFor="let col of index">
+ {{participant[col]}}
+</td>
+</tr>
+
+</table>
+
+
+  <!-- 
+  </table>
+  <thead>
+    <th>id</th>
+    <th>nom</th>
+    <th>prenom</th>
+    <th>age</th>
+    <th>email</th>
+    </thead>
+    <tbody ></tbody> -->
