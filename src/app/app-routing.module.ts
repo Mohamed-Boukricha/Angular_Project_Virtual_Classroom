@@ -9,9 +9,10 @@ const routes: Routes = [
     component: NavBarComponent
     },
     {
-    path: '/Participant/list',
+    path: 'Participant/list',
     component: ParticipantListComponent
     }
+
 ];
 
 @NgModule({
