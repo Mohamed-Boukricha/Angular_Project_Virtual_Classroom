@@ -32,7 +32,7 @@ export class AddParticipantComponent implements OnInit {
   }
 
   onSubmit() {
-    this.pservice.createUser(this.addForm.value)
+    this.pservice.createParticipant(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['Participant/list']);
         console.log(data);
