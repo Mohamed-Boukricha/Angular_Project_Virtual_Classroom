@@ -7,21 +7,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ParticipantListComponent } from './participant-list/participant-list.component';
 import {HttpClientModule} from '@angular/common/http';
-
+import { AddParticipantComponent } from './add-participant/add-participant.component';
+import { ParticipantService } from './participant.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    ParticipantListComponent
+    ParticipantListComponent,
+    AddParticipantComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ParticipantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
