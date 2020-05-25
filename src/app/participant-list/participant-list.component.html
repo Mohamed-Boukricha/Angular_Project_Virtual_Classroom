@@ -1,17 +1,27 @@
-<h2 id="title"> Liste des participants</h2>
-<a routerLink="/AddParticipant"  ><button class="addbtn">+</button></a>
 
-<table class="table table-striped" id="participants">
+<br><br>
+<h2 id="title"> Liste des participants</h2>
+<a><button class="addbtn"
+  (click)="add();">+</button></a>
+<br><br>
+<table class="table table-striped" >
 <tr>
+
+
+<!-- booucle de définition du header -->
+
 <th *ngFor="let col of columns">
   {{col}}
   </th>
 </tr>
+<!--  -->
 
  <tr *ngFor="let participant of participants">
 <td *ngFor="let col of index">
  {{participant[col]}}
 </td>
+<td><button class="btn btn-success" onclick="deleteUser(user);"> Delete</button>
+  <button class="btn btn-success" onclick="editUser(user);" style="margin-left: 20px;"> Edit</button></td>
 </tr>
 
 </table>

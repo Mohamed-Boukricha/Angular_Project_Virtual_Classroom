@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ParticipantListComponent } from './participant-list/participant-list.component';
+import {AddParticipantComponent} from './add-participant/add-participant.component';
 
 const routes: Routes = [
     {
@@ -11,6 +12,11 @@ const routes: Routes = [
     {
     path: 'Participant/list',
     component: ParticipantListComponent
+    },
+    {
+    path: 'AddParticipant',
+    component: AddParticipantComponent
+      
     }
 
 ];
