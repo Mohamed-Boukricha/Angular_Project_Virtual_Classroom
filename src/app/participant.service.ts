@@ -27,7 +27,7 @@ export class ParticipantService {
   }
  
 
-  createUser(participant: Participant): Observable<Participant[]> {
+  createParticipant(participant: Participant): Observable<Participant[]> {
     return this.http.post<Participant[]>(this.url, participant);
   }
 
