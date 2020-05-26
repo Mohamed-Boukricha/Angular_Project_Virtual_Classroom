@@ -10,13 +10,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddParticipantComponent } from './add-participant/add-participant.component';
 import { ParticipantService } from './participant.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditParticipantComponent } from './edit-participant/edit-participant.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ParticipantListComponent,
-    AddParticipantComponent
+    AddParticipantComponent,
+    EditParticipantComponent
   ],
   imports: [
     BrowserModule,

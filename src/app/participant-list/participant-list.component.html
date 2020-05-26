@@ -20,8 +20,8 @@
 <td *ngFor="let col of index">
  {{participant[col]}}
 </td>
-<td><button class="btn btn-success" onclick="deleteUser(user);"> Delete</button>
-  <button class="btn btn-success" onclick="editUser(user);" style="margin-left: 20px;"> Edit</button></td>
+<td><button class="btn btn-success" onClick="return confirm('Are you absolutely sure you want to delete?')" (click)="deleteParticipant(participant);"> Delete</button>
+  <button class="btn btn-success" (click)="editParticipant(participant);" style="margin-left: 20px;"> Edit</button></td>
 </tr>
 
 </table>
