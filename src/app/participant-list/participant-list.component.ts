@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ParticipantService} from '../participant.service';
 import {Participant} from '../models/participant';
 import { Router } from '@angular/router';
-
+import {EditParticipantComponent} from '../edit-participant/edit-participant.component';
 
 /**
  * Définition du composant (templete,style et tag)
@@ -53,30 +53,16 @@ export class ParticipantListComponent implements OnInit {
   add() : void{
     this.router.navigate(['AddParticipant']);
   }
-
- /* deleteUser(user: User): void {
-    this.apiService.deleteUser(user.id)
-      .subscribe( data => {
-        this.users = this.users.filter(u => u !== user);
-      })
+  editParticipant(participant: Participant): void {
+    window.localStorage.setItem("editParticipantId", participant.id.toString());
+    this.router.navigate(['EditParticipant']);
   };
-
-  editUser(user: User): void {
-    window.localStorage.removeItem("editUserId");
-    window.localStorage.setItem("editUserId", user.id.toString());
-    this.router.navigate(['edit-user']);
-  };
-
-  addUser(): void {
-    this.router.navigate(['add-user']);
-  };
-
-
-
-*/
+  deleteParticipant(participant: Participant): void{
+     this.pservice.deleteParticipant(participant.id);
+     this.participants= this.participants.filter(u => u !== participant);
   }
 
   
-
+}
 
 

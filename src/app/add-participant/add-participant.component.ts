@@ -20,8 +20,14 @@ export class AddParticipantComponent implements OnInit {
 
 
   ngOnInit(): void {
+    let participantId = window.localStorage.getItem("editParticipantId");
+    if(!participantId) {
+      alert("Invalid action.")
+      this.router.navigate(['Participant/list']);
+      return;
+    }
     this.addForm = this.formBuilder.group({
-      id: [],
+      id: [''],
       lastname: ['', Validators.required],
       firstname: ['', Validators.required],
       datenaissance: ['', Validators.required],
