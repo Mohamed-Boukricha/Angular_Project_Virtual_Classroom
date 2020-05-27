@@ -1,8 +1,10 @@
-<!--edit user module -->
+<!--edit user Template -->
+
 <h2 id="title"> Modifier Participant</h2>
 
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="b4-form-hidden">
+    <label for="id"> ID:</label>
     <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
     </div>
     <div class="form-group">
@@ -28,6 +30,8 @@
     </div>
     <div class="btnposition">
     <button type="submit" class="btn btn-primary">Update</button>
+    <button type="reset" class="btn btn-primary">Annuler</button>
+
 </div>
 </form>
 

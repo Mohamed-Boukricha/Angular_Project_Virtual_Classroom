@@ -4,12 +4,15 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ParticipantListComponent } from './participant-list/participant-list.component';
 import {AddParticipantComponent} from './add-participant/add-participant.component';
 import {EditParticipantComponent} from './edit-participant/edit-participant.component';
+import {AppComponent} from './app.component';
+
+/**
+ * In this file we define our rooting path
+ */
+
 
 const routes: Routes = [
-    {
-    path: '',
-    component: NavBarComponent
-    },
+
     {
     path: 'Participant/list',
     component: ParticipantListComponent
@@ -20,11 +23,10 @@ const routes: Routes = [
       
     },
     {
-      path: 'EditParticipant',
-      component: EditParticipantComponent
+    path: 'EditParticipant',
+    component: EditParticipantComponent
         
-      }
-
+    }
 ];
 
 @NgModule({

@@ -9,23 +9,29 @@ import { ParticipantListComponent } from './participant-list/participant-list.co
 import {HttpClientModule} from '@angular/common/http';
 import { AddParticipantComponent } from './add-participant/add-participant.component';
 import { ParticipantService } from './participant.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { EditParticipantComponent } from './edit-participant/edit-participant.component';
 
+/**
+ * Ng module
+ */
 @NgModule({
+  
   declarations: [
+    
     AppComponent,
+    
     NavBarComponent,
     ParticipantListComponent,
     AddParticipantComponent,
     EditParticipantComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [ParticipantService],

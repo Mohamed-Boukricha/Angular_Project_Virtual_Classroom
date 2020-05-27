@@ -4,6 +4,10 @@ import {Router} from "@angular/router";
 import{Participant} from '../models/participant';
 import { ParticipantService } from '../participant.service';
 
+/**
+ * Définition du composant (templete,style et tag)
+ * Component
+ */
 @Component({
   selector: 'app-add-participant',
   templateUrl: './add-participant.component.html',
@@ -11,20 +15,34 @@ import { ParticipantService } from '../participant.service';
 })
 export class AddParticipantComponent implements OnInit {
 
+  /**
+   * Creates an instance of add participant component.
+   * @param formBuilder 
+   * @param router 
+   * @param pservice 
+   */
   constructor(private formBuilder: FormBuilder,private router: Router, private pservice: ParticipantService) { }
+/**
+ * Participant  of add participant component
+ */
+participant : Participant;
+/**
+ * Messages  of add participant component
+ */
+messages: string[] = [];
+/**
+ * Add form of add participant component
+ */
+addForm: FormGroup;
 
-  participant : Participant;
-  messages: string[] = [];
-
-  addForm: FormGroup;
-
-
-  ngOnInit(): void {
+/**
+ * on init
+ */
+ngOnInit(): void {
     let participantId = window.localStorage.getItem("editParticipantId");
     if(!participantId) {
       alert("Invalid action.")
       this.router.navigate(['Participant/list']);
-      return;
     }
     this.addForm = this.formBuilder.group({
       id: [''],
@@ -36,8 +54,10 @@ export class AddParticipantComponent implements OnInit {
     });
 
   }
-
-  onSubmit() {
+/**
+ * Determines whether submit on
+ */
+onSubmit() {
     this.pservice.createParticipant(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['Participant/list']);
