@@ -1,0 +1,39 @@
+<!-- Participant list Template-->
+<br><br>
+<h2 id="title"> Liste des participants</h2>
+<a><button class="addbtn"
+  (click)="add();">+</button></a>
+<br><br>
+<table class="table table-striped" >
+<tr>
+
+
+<!-- booucle de définition du header -->
+
+<th *ngFor="let col of columns">
+  {{col}}
+  </th>
+</tr>
+<!--  -->
+
+ <tr *ngFor="let participant of participants">
+<td *ngFor="let col of index">
+ {{participant[col]}}
+</td>
+<td><button class="btn btn-success" onClick="return confirm('Are you absolutely sure you want to delete?')" (click)="deleteParticipant(participant);"> Delete</button>
+  <button class="btn btn-success" (click)="editParticipant(participant);" style="margin-left: 20px;"> Edit</button></td>
+</tr>
+
+</table>
+
+
+  <!-- 
+  </table>
+  <thead>
+    <th>id</th>
+    <th>nom</th>
+    <th>prenom</th>
+    <th>age</th>
+    <th>email</th>
+    </thead>
+    <tbody ></tbody> -->

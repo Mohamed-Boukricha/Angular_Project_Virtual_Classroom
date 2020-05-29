@@ -1,0 +1,12 @@
+.addbtn{
+    float: right;
+    }
+    #title
+    {
+    text-align: center;
+    }
+    .btnposition{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
